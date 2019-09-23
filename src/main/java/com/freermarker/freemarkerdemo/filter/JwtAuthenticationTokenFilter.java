@@ -40,7 +40,7 @@ import java.io.IOException;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
-        
+
 
 
         String auth_token = request.getHeader(this.token_header);
