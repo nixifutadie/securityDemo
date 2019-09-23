@@ -1,7 +1,6 @@
 package com.freermarker.freemarkerdemo.filter;
 
-import com.freermarker.freemarkerdemo.entity.User;
-import com.freermarker.freemarkerdemo.mapper.UserMapper;
+
 import com.freermarker.freemarkerdemo.utils.TokenUtils;
 import com.freermarker.freemarkerdemo.utils.imp.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
