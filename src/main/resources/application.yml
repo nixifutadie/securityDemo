@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  freemarker:
+    request-context-attribute: req  #req访问request
+    suffix: .html  #后缀名
+    content-type: text/html
+    enabled: true
+    cache: false #缓存配置
+    template-loader-path: classpath:/page/ #模板加载路径 按需配置
+    charset: UTF-8 #编码格式
+    settings:
+      number_format: '0.##'   #数字格式化，无小数点
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydemo?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper\*.xml
+
+
+
+token:
+  header: Authorization
+  secret: secret
+  expiration: 604800
+

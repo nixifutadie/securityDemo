@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.freermarker.freemarkerdemo.mapper.UserMapper" >
+
+    <select id="getUserFromDatabase" resultType="com.freermarker.freemarkerdemo.entity.User">
+        select u.username,u.password,u.enable,u.last_password_change,r.auth as role from user u
+        left join role r on r.id = u.r_id
+        where u.username = #{username}
+    </select>
+
+
+    <insert id="saveUser" parameterType="com.freermarker.freemarkerdemo.entity.User">
+        insert into user (id,username,password,r_id) values (#{id},#{username},#{password},#{rId})
+    </insert>
+
+    <insert id="saveUserRole" parameterType="com.freermarker.freemarkerdemo.entity.Role">
+        insert into role (id,role_name,auth) values (#{id},#{roleName},#{auth})
+    </insert>
+</mapper>
